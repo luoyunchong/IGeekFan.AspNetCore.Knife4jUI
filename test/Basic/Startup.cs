@@ -119,6 +119,7 @@ namespace Basic
             {
                 endpoints.MapControllers();
                 endpoints.MapSwagger("{documentName}/api-docs");
+
             });
         }
     }
