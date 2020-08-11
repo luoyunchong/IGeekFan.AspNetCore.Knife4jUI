@@ -15,6 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\IGeekFan.AspNetCore.SwaggerUI\IGeekFan.AspNetCore.Knife4jUI.csproj" />
+    <ProjectReference Include="..\..\src\IGeekFan.AspNetCore.Knife4jUI\IGeekFan.AspNetCore.Knife4jUI.csproj" />
   </ItemGroup>
 </Project>

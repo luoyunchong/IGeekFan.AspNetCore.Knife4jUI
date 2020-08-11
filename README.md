@@ -31,6 +31,7 @@ CLI : dotnet add package IGeekFan.AspNetCore.Knife4jUI
 
 ```
 using System.Reflection;
+using Microsoft.AspNetCore.Mvc.Controllers
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using IGeekFan.AspNetCore.Knife4jUI;

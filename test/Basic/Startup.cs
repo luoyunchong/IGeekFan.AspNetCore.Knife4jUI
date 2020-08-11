@@ -17,6 +17,7 @@ using System.Text.Json.Serialization;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 using IGeekFan.AspNetCore.Knife4jUI;
+using Microsoft.AspNetCore.Mvc.Controllers;
 
 namespace Basic
 {
@@ -66,7 +67,8 @@ namespace Basic
                 });
                 c.CustomOperationIds(apiDesc =>
                 {
-                    return apiDesc.TryGetMethodInfo(out MethodInfo methodInfo) ? methodInfo.Name : null;
+                    var controllerAction = apiDesc.ActionDescriptor as ControllerActionDescriptor;
+                    return controllerAction.ControllerName + "-" + controllerAction.ActionName;
                 });
 
                 c.OrderActionsBy((apiDesc) => $"{apiDesc.ActionDescriptor.RouteValues["controller"]}_{apiDesc.HttpMethod}");
