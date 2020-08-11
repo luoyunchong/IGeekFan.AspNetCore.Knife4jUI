@@ -30,7 +30,6 @@ CLI : dotnet add package IGeekFan.AspNetCore.Knife4jUI
 2.In the ConfigureServices method of Startup.cs, register the Swagger generator, defining one or more Swagger documents.
 
 ```
-using System.Reflection;
 using Microsoft.AspNetCore.Mvc.Controllers
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;

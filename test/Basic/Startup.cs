@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,12 +9,6 @@ using Microsoft.OpenApi.Models;
 using Basic.Swagger;
 using Microsoft.AspNetCore.Localization;
 using System.IO;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Options;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using System.Reflection;
 using IGeekFan.AspNetCore.Knife4jUI;
 using Microsoft.AspNetCore.Mvc.Controllers;
 
