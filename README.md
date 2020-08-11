@@ -50,7 +50,8 @@ using IGeekFan.AspNetCore.Knife4jUI;
         });
         c.CustomOperationIds(apiDesc =>
         {
-            return apiDesc.TryGetMethodInfo(out MethodInfo methodInfo) ? methodInfo.Name : null;
+            var controllerAction = apiDesc.ActionDescriptor as ControllerActionDescriptor;
+            return  controllerAction.ControllerName+"-"+controllerAction.ActionName;
         });
     });
 ```
