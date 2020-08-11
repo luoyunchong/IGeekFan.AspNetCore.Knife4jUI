@@ -33,11 +33,12 @@ namespace IGeekFan.AspNetCore.Knife4jUI
         /// <summary>
         /// Gets the JavaScript config object, represented as JSON, that will be passed to the Knife4jUI
         /// </summary>
-        public ConfigObject ConfigObject  { get; set; } = new ConfigObject();
+        public ConfigObject ConfigObject { get; set; } = new ConfigObject();
 
         /// <summary>
-        /// Gets the JavaScript config object, represented as JSON, that will be passed to the initOAuth method
+        /// 暂不支持此特性Gets the JavaScript config object, represented as JSON, that will be passed to the initOAuth method
         /// </summary>
+        [Obsolete]
         public OAuthConfigObject OAuthConfigObject { get; set; } = new OAuthConfigObject();
     }
 

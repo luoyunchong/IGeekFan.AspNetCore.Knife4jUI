@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.StaticFiles;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Hosting;
+using System.Collections.Generic;
 #if NETCOREAPP3_0
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IWebHostEnvironment;
 #endif
@@ -109,8 +110,25 @@ namespace IGeekFan.AspNetCore.Knife4jUI
             {
                 // Inject arguments before writing to response
                 var htmlBuilder = new StringBuilder(new StreamReader(stream).ReadToEnd());
+
+                foreach (var entry in GetIndexArguments())
+                {
+                    htmlBuilder.Replace(entry.Key, entry.Value);
+                }
+
                 await response.WriteAsync(htmlBuilder.ToString(), Encoding.UTF8);
             }
+        }
+
+
+        private IDictionary<string, string> GetIndexArguments()
+        {
+            return new Dictionary<string, string>()
+            {
+                { "%(DocumentTitle)", _options.DocumentTitle },
+                { "%(HeadContent)", _options.HeadContent },
+                //{ "%(OAuthConfigObject)", JsonSerializer.Serialize(_options.OAuthConfigObject, _jsonSerializerOptions) }
+            };
         }
     }
 }

@@ -11,7 +11,7 @@
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/luoyunchong/IGeekFan.AspNetCore.Knife4jUI.git</RepositoryUrl>
 		<RootNamespace>IGeekFan.AspNetCore.Knife4jUI</RootNamespace>
-		<Version>0.0.1</Version>
+		<Version>0.0.2</Version>
 		<Company />
 		<Authors>igeekfan;xiaoym;</Authors>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
