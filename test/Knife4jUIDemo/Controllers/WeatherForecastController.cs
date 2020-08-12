@@ -7,8 +7,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Knife4jUIDemo.Controllers
 {
+    /// <summary>
+    /// 中文这是一个Get请求这是一个Get请求
+    /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/WeatherForecast")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -23,6 +26,10 @@ namespace Knife4jUIDemo.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// 这是一个Get请求
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

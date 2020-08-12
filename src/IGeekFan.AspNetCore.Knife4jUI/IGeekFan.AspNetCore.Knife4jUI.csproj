@@ -11,12 +11,13 @@
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/luoyunchong/IGeekFan.AspNetCore.Knife4jUI.git</RepositoryUrl>
 		<RootNamespace>IGeekFan.AspNetCore.Knife4jUI</RootNamespace>
-		<Version>0.0.2</Version>
+		<Version>0.0.3</Version>
 		<Company />
 		<Authors>igeekfan;xiaoym;</Authors>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Copyright>Apache License 2.0</Copyright>
 		<PackageLicenseExpression></PackageLicenseExpression>
+		<AssemblyVersion>0.0.3.0</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">

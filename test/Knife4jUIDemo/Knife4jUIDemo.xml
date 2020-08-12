@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Knife4jUIDemo</name>
+    </assembly>
+    <members>
+        <member name="T:Knife4jUIDemo.Controllers.WeatherForecastController">
+            <summary>
+            中文这是一个Get请求这是一个Get请求
+            </summary>
+        </member>
+        <member name="M:Knife4jUIDemo.Controllers.WeatherForecastController.Get">
+            <summary>
+            这是一个Get请求
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

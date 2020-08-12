@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System.IO;
 
 namespace Knife4jUIDemo
 {
@@ -35,6 +36,9 @@ namespace Knife4jUIDemo
                     var controllerAction = apiDesc.ActionDescriptor as ControllerActionDescriptor;
                     return controllerAction.ControllerName + "-" + controllerAction.ActionName;
                 });
+
+                var filePath = Path.Combine(System.AppContext.BaseDirectory, "Knife4jUIDemo.xml");
+                c.IncludeXmlComments(filePath, true);
             });
         }
 
@@ -53,6 +57,11 @@ namespace Knife4jUIDemo
             app.UseAuthorization();
 
             app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/v1/api-docs", "LinCms");
+            });
 
             app.UseKnife4UI(c =>
             {

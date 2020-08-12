@@ -50,9 +50,9 @@ namespace Basic
 
                 c.GeneratePolymorphicSchemas();
 
-                c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Basic.xml"));
+                c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Basic.xml"),true);
 
-                c.EnableAnnotations();
+                //c.EnableAnnotations();
                 c.AddServer(new OpenApiServer()
                 {
                     Url = "",
@@ -104,7 +104,7 @@ namespace Basic
 
             app.UseKnife4UI(c =>
             {
-                c.RoutePrefix = ""; // serve the UI at root
+                //c.RoutePrefix = ""; // serve the UI at root
                 c.SwaggerEndpoint("/v1/api-docs", "V1 Docs");
                 c.SwaggerEndpoint("/gp/api-docs", "µÇÂ¼Ä£¿é");
             });
