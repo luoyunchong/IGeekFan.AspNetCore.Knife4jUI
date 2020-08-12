@@ -73,6 +73,24 @@ app.UseEndpoints(endpoints =>
 });
 ```
 
+5.更多功能
+
+为文档添加注释 在项目上右键--属性--生成
+
+![](https://pic.downk.cc/item/5f34161d14195aa59413f0fc.jpg)
+
+在AddSwaggerGen方法中添加如下代码
+
+```
+c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "SwaggerDemo.xml"),true);
+```
+ 最后一个参数设置为true，代表启用控制器上的注释
+
+运行后如看不到控制器上注释显示，请点开文档管理->个性化设置，开启分组tag显示description说明属性
+
+![](https://pic.downk.cc/item/5f34171114195aa594142d2e.jpg)
+
+
 
 ### 🔎 效果图
 运行项目，打开 https://localhost:5001/index.html#/home
