@@ -8,6 +8,7 @@
 
   <ItemGroup>
 	  <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="5.5.1" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="5.5.1" />
   </ItemGroup>
 
   <ItemGroup>

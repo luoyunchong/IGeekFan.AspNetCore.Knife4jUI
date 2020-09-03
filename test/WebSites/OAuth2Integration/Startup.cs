@@ -7,6 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using NCaptcha.AspNetCore.SessionImages;
+using IGeekFan.AspNetCore.Knife4jUI;
+using Microsoft.AspNetCore.Mvc.Controllers;
 
 namespace OAuth2Integration
 {
@@ -50,6 +53,9 @@ namespace OAuth2Integration
 
             services.AddControllersWithViews();
 
+            services.AddSession();
+            services.AddSessionBasedImageCaptcha();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "Test API V1" });
@@ -71,6 +77,12 @@ namespace OAuth2Integration
                             }
                         }
                     }
+                });
+
+                c.CustomOperationIds(apiDesc =>
+                {
+                    var controllerAction = apiDesc.ActionDescriptor as ControllerActionDescriptor;
+                    return controllerAction.ControllerName + "-" + controllerAction.ActionName;
                 });
 
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -96,6 +108,8 @@ namespace OAuth2Integration
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSession();
 
             app.Map("/auth-server", authServer =>
             {
@@ -126,8 +140,22 @@ namespace OAuth2Integration
                 });
 
                 resourceServer.UseSwagger();
+
+                app.UseKnife4UI(c =>
+                {
+                    c.RoutePrefix = ""; //http://localhost:5000/index.html#/home
+                    c.SwaggerEndpoint("/resource-server/swagger/v1/swagger.json", "My API V1");
+                    c.EnableDeepLinking();
+                    c.OAuthClientId("test-id");
+                    c.OAuthClientSecret("test-secret");
+                    c.OAuthAppName("test-app");
+                    c.OAuthScopeSeparator(" ");
+                    c.OAuthUsePkce();
+                });
+
                 resourceServer.UseSwaggerUI(c =>
                 {
+                    //http://localhost:5000/resource-server/swagger/index.html
                     c.SwaggerEndpoint("/resource-server/swagger/v1/swagger.json", "My API V1");
                     c.EnableDeepLinking();
 

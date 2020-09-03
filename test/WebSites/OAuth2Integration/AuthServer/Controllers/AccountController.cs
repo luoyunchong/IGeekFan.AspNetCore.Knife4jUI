@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using IdentityServer4;
 using IdentityServer4.Test;
+using NCaptcha.Abstractions;
+using NCaptcha.AspNetCore.Extensions;
 
 namespace OAuth2Integration.AuthServer.Controllers
 {
@@ -26,8 +28,9 @@ namespace OAuth2Integration.AuthServer.Controllers
             return View("/AuthServer/Views/Login.cshtml", viewModel);
         }
 
+
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromForm]LoginViewModel viewModel)
+        public async Task<IActionResult> Login([FromForm] LoginViewModel viewModel)
         {
             if (!_userStore.ValidateCredentials(viewModel.Username, viewModel.Password))
             {
@@ -43,6 +46,7 @@ namespace OAuth2Integration.AuthServer.Controllers
 
             return Redirect(viewModel.ReturnUrl);
         }
+
     }
 
     public class LoginViewModel
