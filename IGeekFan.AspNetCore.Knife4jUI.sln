@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSites", "WebSites", "{86
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuth2Integration", "test\WebSites\OAuth2Integration\OAuth2Integration.csproj", "{9E8D8F42-33F0-4F2D-9B56-1AB1B33DE1FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSwag.Swagger.Knife4jUI", "NSwag.Swagger.Knife4jUI\NSwag.Swagger.Knife4jUI.csproj", "{32CF97CB-E877-4EB6-A9EB-03A566FFF2B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{9E8D8F42-33F0-4F2D-9B56-1AB1B33DE1FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E8D8F42-33F0-4F2D-9B56-1AB1B33DE1FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E8D8F42-33F0-4F2D-9B56-1AB1B33DE1FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32CF97CB-E877-4EB6-A9EB-03A566FFF2B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32CF97CB-E877-4EB6-A9EB-03A566FFF2B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32CF97CB-E877-4EB6-A9EB-03A566FFF2B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32CF97CB-E877-4EB6-A9EB-03A566FFF2B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{6C784918-BE29-4FEF-8AC3-9D34A38DE822} = {929BB2D7-C678-4BE8-8AA9-F271A2AE4545}
 		{86851B6C-3504-4879-8464-1DB422D46BA0} = {75C51574-4CBD-403B-8182-8BF2A6DCFD43}
 		{9E8D8F42-33F0-4F2D-9B56-1AB1B33DE1FA} = {86851B6C-3504-4879-8464-1DB422D46BA0}
+		{32CF97CB-E877-4EB6-A9EB-03A566FFF2B0} = {C146A419-15E0-4475-9623-706C5E2DCE0B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D77CCB4-F597-421B-9EF9-52D4B0AC382D}
