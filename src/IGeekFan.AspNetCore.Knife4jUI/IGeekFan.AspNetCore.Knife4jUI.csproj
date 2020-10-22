@@ -31,10 +31,6 @@
 	<ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.5.1" />
-		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.5.1" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<EmbeddedResource Include="knife4j/**/*" />
