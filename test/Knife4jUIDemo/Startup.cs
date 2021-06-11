@@ -60,6 +60,7 @@ namespace Knife4jUIDemo
 
             app.UseSwaggerUI(c =>
             {
+                c.RoutePrefix = "swagger"; // serve the UI at root
                 c.SwaggerEndpoint("/v1/api-docs", "LinCms");
             });
 

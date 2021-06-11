@@ -19,8 +19,13 @@
 		<PackageLicenseExpression></PackageLicenseExpression>
 		<AssemblyVersion>0.0.8.0</AssemblyVersion>
 		<FileVersion>0.0.8.0</FileVersion>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 	</PropertyGroup>
-
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+	</ItemGroup>
 	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
 		<PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.1.0" />
 		<PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.0" />

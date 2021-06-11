@@ -103,13 +103,13 @@ namespace Basic
 
             app.UseSwaggerUI(c =>
             {
-                c.RoutePrefix = ""; // serve the UI at root
+                c.RoutePrefix = "swagger"; // serve the UI at root
                 c.SwaggerEndpoint("/v1/api-docs", "V1 Docs");
                 c.SwaggerEndpoint("/gp/api-docs", "µÇÂ¼Ä£¿é");
             });
             app.UseKnife4UI(c =>
             {
-                //c.RoutePrefix = ""; // serve the UI at root
+                c.RoutePrefix = ""; // serve the UI at root
                 c.SwaggerEndpoint("/v1/api-docs", "V1 Docs");
                 c.SwaggerEndpoint("/gp/api-docs", "µÇÂ¼Ä£¿é");
             });

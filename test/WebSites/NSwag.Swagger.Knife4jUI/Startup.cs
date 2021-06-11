@@ -55,6 +55,7 @@ namespace NSwag.Swagger.Knife4jUI
             });
             app.UseKnife4UI(c =>
             {
+                c.RoutePrefix = ""; // serve the UI at root
                 // c.RoutePrefix = "/docs"; // serve the UI at root
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "V1 Docs");
             });
