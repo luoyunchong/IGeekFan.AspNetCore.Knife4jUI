@@ -136,6 +136,8 @@ namespace IGeekFan.AspNetCore.Knife4jUI
         public string Url { get; set; }
 
         public string Name { get; set; }
+
+        public string SwaggerVersion { get; set; } = "3.0";
     }
 
     public enum ModelRendering

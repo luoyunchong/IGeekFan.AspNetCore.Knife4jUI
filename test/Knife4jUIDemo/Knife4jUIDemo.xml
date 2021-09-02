@@ -9,11 +9,113 @@
             中文这是一个Get请求这是一个Get请求
             </summary>
         </member>
+        <member name="M:Knife4jUIDemo.Controllers.WeatherForecastController.GetErrorCode">
+            <summary>
+            得到一个ErrorCode
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Knife4jUIDemo.Controllers.WeatherForecastController.PostErrorCode(Knife4jUIDemo.Controllers.PostErrorCodeDto)">
+            <summary>
+            发送一个Post
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Knife4jUIDemo.Controllers.WeatherForecastController.Get">
             <summary>
             这是一个Get请求
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:Knife4jUIDemo.Controllers.PostErrorCodeDto">
+            <summary>
+            请求实体
+            </summary>
+        </member>
+        <member name="P:Knife4jUIDemo.Controllers.PostErrorCodeDto.Message">
+            <summary>
+            异常信息
+            </summary>
+        </member>
+        <member name="P:Knife4jUIDemo.Controllers.PostErrorCodeDto.ErrorCode">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="T:Knife4jUIDemo.ErrorCode">
+            <summary>
+            注释ErrorCode
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.Success">
+            <summary>
+            操作成功
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.UnknownError">
+            <summary>
+            未知错误
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.ServerUnknownError">
+            <summary>
+            服务器未知错误
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.Error">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.AuthenticationFailed">
+            <summary>
+            认证失败
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.NoPermission">
+            <summary>
+            无权限
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.Fail">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.RefreshTokenError">
+            <summary>
+            refreshToken异常
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.NotFound">
+            <summary>
+            资源不存在
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.ParameterError">
+            <summary>
+            参数错误
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.TokenInvalidation">
+            <summary>
+            令牌失效
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.TokenExpired">
+            <summary>
+            令牌过期
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.RepeatField">
+            <summary>
+            字段重复
+            </summary>
+        </member>
+        <member name="F:Knife4jUIDemo.ErrorCode.Inoperable">
+            <summary>
+            禁止操作
+            </summary>
         </member>
     </members>
 </doc>

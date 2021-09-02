@@ -1,39 +1,46 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;netcoreapp3.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;netcoreapp3.1;net5.0</TargetFrameworks>
 		<Description>Middleware to expose an embedded version of the knife4j-vue-v3 from an ASP.NET Core application</Description>
 		<NoWarn>$(NoWarn);1591</NoWarn>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-		<PackageId></PackageId>
+		<PackageId>IGeekFan.AspNetCore.Knife4jUI</PackageId>
 		<PackageTags>swagger;documentation;discovery;help;webapi;aspnet;aspnetcore</PackageTags>
 		<PackageProjectUrl>https://github.com/luoyunchong/IGeekFan.AspNetCore.Knife4jUI</PackageProjectUrl>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/luoyunchong/IGeekFan.AspNetCore.Knife4jUI.git</RepositoryUrl>
 		<RootNamespace>IGeekFan.AspNetCore.Knife4jUI</RootNamespace>
-		<Version>0.0.7</Version>
+		<Version>0.0.9</Version>
 		<Company />
 		<Authors>igeekfan;xiaoym;</Authors>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Copyright>Apache License 2.0</Copyright>
 		<PackageLicenseExpression></PackageLicenseExpression>
-		<AssemblyVersion>0.0.8.0</AssemblyVersion>
-		<FileVersion>0.0.8.0</FileVersion>
+		<AssemblyVersion>0.0.9.0</AssemblyVersion>
+		<FileVersion>0.0.9.0</FileVersion>
+	</PropertyGroup>
+
+	<!-- Using SourceLink -->
+	<PropertyGroup>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 	</PropertyGroup>
+
 	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
 	</ItemGroup>
-	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' ">
 		<PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.1.0" />
 		<PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.0" />
 		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.1.0" />
 		<PackageReference Include="System.Text.Json" Version="4.6.0" />
 	</ItemGroup>
 
-	<ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
+	<ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0' ">
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
 

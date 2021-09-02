@@ -26,6 +26,13 @@ namespace Basic.Controllers
             throw new NotImplementedException();
         }
 
+        [HttpPost("form-with-user")]
+        public IActionResult PostFormUser([FromForm] FormUser FormUser)
+        {
+            throw new NotImplementedException();
+        }
+
+
         [HttpGet("{name}")]
         [Produces("application/octet-stream", Type = typeof(FileResult))]
         public FileResult GetFile(string name)
@@ -46,5 +53,12 @@ namespace Basic.Controllers
         public string Name { get; set; }
 
         public IFormFile File { get; set; }
+    }
+
+    public class FormUser
+    {
+        public string Name { get; set; }
+
+        public string User { get; set; }
     }
 }

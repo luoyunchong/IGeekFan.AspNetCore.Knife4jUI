@@ -14,8 +14,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Hosting;
 using System.Collections.Generic;
-#if NETCOREAPP3_0
-using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IWebHostEnvironment;
+#if NETSTANDARD2_0
+using IWebHostEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 #endif
 namespace IGeekFan.AspNetCore.Knife4jUI
 {
@@ -29,7 +29,7 @@ namespace IGeekFan.AspNetCore.Knife4jUI
 
         public Knife4jUIMiddleware(
             RequestDelegate next,
-            IHostingEnvironment hostingEnv,
+            IWebHostEnvironment hostingEnv,
             ILoggerFactory loggerFactory,
             Knife4UIOptions options)
         {
@@ -66,7 +66,7 @@ namespace IGeekFan.AspNetCore.Knife4jUI
                 return;
             }
 
-            if (httpMethod == "GET" && Regex.IsMatch(path, $"^/v3/api-docs/swagger-config$"))
+            if (httpMethod == "GET" && Regex.IsMatch(path, $"^/swagger-resources$"))
             {
                 await RespondWithConfig(httpContext.Response);
                 return;
@@ -77,12 +77,12 @@ namespace IGeekFan.AspNetCore.Knife4jUI
       
         private async Task RespondWithConfig(HttpResponse response)
         {
-            await response.WriteAsync(JsonSerializer.Serialize(_options.ConfigObject, _jsonSerializerOptions));
+            await response.WriteAsync(JsonSerializer.Serialize(_options.ConfigObject.Urls, _jsonSerializerOptions));
         }
 
         private StaticFileMiddleware CreateStaticFileMiddleware(
             RequestDelegate next,
-            IHostingEnvironment hostingEnv,
+            IWebHostEnvironment hostingEnv,
             ILoggerFactory loggerFactory,
             Knife4UIOptions options)
         {

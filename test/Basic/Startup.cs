@@ -104,21 +104,21 @@ namespace Basic
             app.UseSwaggerUI(c =>
             {
                 c.RoutePrefix = "swagger"; // serve the UI at root
-                c.SwaggerEndpoint("/v1/api-docs", "V1 Docs");
-                c.SwaggerEndpoint("/gp/api-docs", "µÇÂ¼Ä£¿é");
+                c.SwaggerEndpoint("/v1/swagger.json", "V1 Docs");
+                c.SwaggerEndpoint("/gp/swagger.json", "µÇÂ¼Ä£¿é");
             });
             app.UseKnife4UI(c =>
             {
                 c.RoutePrefix = ""; // serve the UI at root
-                c.SwaggerEndpoint("/v1/api-docs", "V1 Docs");
-                c.SwaggerEndpoint("/gp/api-docs", "µÇÂ¼Ä£¿é");
+                c.SwaggerEndpoint("/v1/swagger.json", "V1 Docs");
+                c.SwaggerEndpoint("/gp/swagger.json", "µÇÂ¼Ä£¿é");
             });
 
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapSwagger("{documentName}/api-docs");
+                endpoints.MapSwagger("{documentName}/swagger.json");
 
             });
         }

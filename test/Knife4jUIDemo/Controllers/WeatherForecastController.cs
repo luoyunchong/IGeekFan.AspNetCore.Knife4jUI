@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Knife4jUIDemo.Controllers
 {
@@ -11,7 +10,7 @@ namespace Knife4jUIDemo.Controllers
     /// 中文这是一个Get请求这是一个Get请求
     /// </summary>
     [ApiController]
-    [Route("api/WeatherForecast")]
+    [Route("api/WeatherForecast/[action]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -24,6 +23,38 @@ namespace Knife4jUIDemo.Controllers
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
+        }
+
+        /// <summary>
+        /// 得到一个ErrorCode
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ErrorCode GetErrorCode()
+        {
+            return ErrorCode.Success;
+        }
+
+        [HttpGet]
+        public ErrorCode GetErrorCode2(ErrorCode errorCode)
+        {
+            return errorCode;
+        }
+
+        [HttpGet]
+        public IActionResult GetErrorCode4(ErrorCode errorCode)
+        {
+            return new JsonResult(new PostErrorCodeDto() { Message="a",ErrorCode=errorCode});
+        }
+
+        /// <summary>
+        /// 发送一个Post
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public PostErrorCodeDto PostErrorCode([FromBody] PostErrorCodeDto PostErrorCodeDto)
+        {
+            return PostErrorCodeDto;
         }
 
         /// <summary>
@@ -42,5 +73,20 @@ namespace Knife4jUIDemo.Controllers
             })
             .ToArray();
         }
+    }
+
+    /// <summary>
+    /// 请求实体
+    /// </summary>
+    public class PostErrorCodeDto
+    {
+        /// <summary>
+        /// 异常信息
+        /// </summary>
+        public string Message { get; set; }
+        /// <summary>
+        /// 状态码
+        /// </summary>
+        public ErrorCode ErrorCode { get; set; }
     }
 }

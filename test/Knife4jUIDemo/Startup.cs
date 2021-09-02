@@ -60,20 +60,20 @@ namespace Knife4jUIDemo
 
             app.UseSwaggerUI(c =>
             {
-                c.RoutePrefix = "swagger"; // serve the UI at root
-                c.SwaggerEndpoint("/v1/api-docs", "LinCms");
+                c.SwaggerEndpoint("v1/swagger.json", "My API V1");
+                //c.SwaggerEndpoint("/v1/api-docs", "LinCms");
             });
 
             app.UseKnife4UI(c =>
             {
                 c.RoutePrefix = ""; // serve the UI at root
-                c.SwaggerEndpoint("/v1/api-docs", "V1 Docs");
+                c.SwaggerEndpoint("/v1/swagger.json", "V1 Docs");
             });
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapSwagger("{documentName}/api-docs");
+                endpoints.MapSwagger("{documentName}/swagger.json");
             });
         }
     }
