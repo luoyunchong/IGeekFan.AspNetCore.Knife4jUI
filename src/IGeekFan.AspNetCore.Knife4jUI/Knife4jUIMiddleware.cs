@@ -45,6 +45,7 @@ namespace IGeekFan.AspNetCore.Knife4jUI
 
         public async Task Invoke(HttpContext httpContext)
         {
+
             var httpMethod = httpContext.Request.Method;
             var path = httpContext.Request.Path.Value;
 
@@ -66,7 +67,7 @@ namespace IGeekFan.AspNetCore.Knife4jUI
                 return;
             }
 
-            if (httpMethod == "GET" && Regex.IsMatch(path, $"^/swagger-resources$"))
+            if (httpMethod == "GET" && Regex.IsMatch(path, $"/swagger-resources$"))
             {
                 await RespondWithConfig(httpContext.Response);
                 return;
@@ -74,7 +75,7 @@ namespace IGeekFan.AspNetCore.Knife4jUI
 
             await _staticFileMiddleware.Invoke(httpContext);
         }
-      
+
         private async Task RespondWithConfig(HttpResponse response)
         {
             await response.WriteAsync(JsonSerializer.Serialize(_options.ConfigObject.Urls, _jsonSerializerOptions));
