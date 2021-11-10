@@ -1,4 +1,4 @@
-using IGeekFan.AspNetCore.Knife4jUI;
+﻿using IGeekFan.AspNetCore.Knife4jUI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Controllers;
@@ -28,7 +28,7 @@ namespace Knife4jUIDemo
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API V1", Version = "v1" });
                 c.AddServer(new OpenApiServer()
                 {
-                    Url = "",
+                    //Url = "http://localhost:81/admin/",
                     Description = "vvv"
                 });
                 c.CustomOperationIds(apiDesc =>

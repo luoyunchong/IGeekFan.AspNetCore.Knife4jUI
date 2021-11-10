@@ -6,8 +6,8 @@
 [![nuget](https://img.shields.io/nuget/v/IGeekFan.AspNetCore.Knife4jUI.svg?style=flat-square)](https://www.nuget.org/packages/IGeekFan.AspNetCore.Knife4jUI) [![stats](https://img.shields.io/nuget/dt/IGeekFan.AspNetCore.Knife4jUI.svg?style=flat-square)](https://www.nuget.org/stats/packages/IGeekFan.AspNetCore.Knife4jUI?groupby=Version) [![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://raw.githubusercontent.com/luoyunchong/IGeekFan.AspNetCore.Knife4jUI/master/LICENSE.txt)
 
 ## 相关依赖项
-### [knife4j](https://gitee.com/xiaoym/knife4j)
-- knife4j-vue-v3(不是vue3,而是swagger-ui-v3版本）
+### [knife4j](https://gitee.com/xiaoym/knife4j/tree/master/knife4j-vue)
+- knife4j-vue
 ### [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
 - Swashbuckle.AspNetCore.Swagger
 - Swashbuckle.AspNetCore.SwaggerGen
@@ -134,7 +134,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 ### 🔎 效果图
 运行项目，打开 https://localhost:5001/index.html#/home
 
-![https://pic.downk.cc/item/5f2fa77b14195aa594ccbedc.jpg](https://pic.downk.cc/item/5f2fa77b14195aa594ccbedc.jpg)
+![docs/home.jpg](docs/home.jpg)
 
 
 ### 更多配置请参考
@@ -146,4 +146,4 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 
 - [https://api.igeekfan.cn/swagger/index.html](https://api.igeekfan.cn/swagger/index.html)
 - [https://github.com/luoyunchong/lin-cms-dotnetcore](https://github.com/luoyunchong/lin-cms-dotnetcore)
-![image](https://pic.downk.cc/item/5f2fa97814195aa594cd5cfc.jpg)
+![preview.jpg](docs/preview.jpg)
