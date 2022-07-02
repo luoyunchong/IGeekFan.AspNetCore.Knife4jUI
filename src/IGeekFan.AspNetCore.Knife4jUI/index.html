@@ -6,6 +6,7 @@
     <meta name=viewport content="width=device-width,initial-scale=1">
     <link rel=icon href=favicon.ico>
     <title>%(DocumentTitle)</title>
+    <script src="knife4j/js/axios.min.js"></script>
     <link href=knife4j/css/chunk-51277dbe.57225f85.css rel=prefetch>
     <link href=knife4j/js/chunk-069eb437.0b47243d.js rel=prefetch>
     <link href=knife4j/js/chunk-0fd67716.d57e2c41.js rel=prefetch>
@@ -28,15 +29,18 @@
     <link href=knife4j/css/app.284871fa.css rel=stylesheet>
     %(HeadContent)
 </head>
-<body>
-    <noscript><strong>We're sorry but knife4j-vue doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
-    <div id=app></div>
-    <script src=knife4j/js/chunk-vendors.90e8ba20.js></script>
-    <script src=knife4j/js/app.6735d201.js></script>
-    <script>
-        window.onload = function () {
+<body id="body">
+<script src="knife4j/js/app-auth.js"></script>
+<noscript>
+    <strong>We're sorry but knife4j-vue doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+</noscript>
+<div id=app></div>
+<script src=knife4j/js/chunk-vendors.90e8ba20.js></script>
+<script src=knife4j/js/app.6735d201.js></script>
+<script>
+    window.onload = function() {
 
-        }
-    </script>
+    }
+</script>
 </body>
 </html>

@@ -73,7 +73,37 @@ namespace IGeekFan.AspNetCore.Knife4jUI
                 return;
             }
 
+            if (httpMethod == "GET" && Regex.IsMatch(path, $"/knife4j-auth"))
+            {
+                await RespondIsAuth(httpContext.Response);
+                return;
+            }
+
+            if (httpMethod == "GET" && Regex.IsMatch(path, $"/knife4j-pass"))
+            {
+                await RespondIsAuthPass(httpContext.Response, httpContext.Request);
+                return;
+            }
             await _staticFileMiddleware.Invoke(httpContext);
+        }
+
+        private async Task RespondIsAuthPass(HttpResponse response, HttpRequest request)
+        {
+            var password = request.Query["Password"].ToString();
+            var result = new
+            {
+                result = password == Knife4UIConfiguration.Password
+            };
+            await response.WriteAsync(JsonSerializer.Serialize(result));
+        }
+
+        private async Task RespondIsAuth(HttpResponse response)
+        {
+            var result = new
+            {
+                result = Knife4UIConfiguration.Authentication
+            };
+            await response.WriteAsync(JsonSerializer.Serialize(result));
         }
 
         private async Task RespondWithConfig(HttpResponse response)

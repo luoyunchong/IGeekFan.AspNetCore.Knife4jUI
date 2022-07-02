@@ -136,6 +136,27 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 
 ![docs/home.jpg](docs/home.jpg)
 
+### 开启密码验证
+
+> 在生产环境下，如要暴露Swagger，可设置密码验证
+
+* 在appsetting.json中增加配置
+
+~~~json
+"Knife4jUIConfig": {
+    "Knife4JAuth": true,     //是否开启密码验证
+    "Knife4JPassword": "123" //密码
+},
+~~~
+
+* 在Startup.cs-ConfigureServices中添加
+
+~~~C#
+//参数需要把IConfiguration传入
+services.AddKnife4UI(Configuration);
+//asp.net core 6.0 在Program.cs中
+builder.Services.AddKnife4UI(builder.Configuration);
+~~~
 
 ### 更多配置请参考
 

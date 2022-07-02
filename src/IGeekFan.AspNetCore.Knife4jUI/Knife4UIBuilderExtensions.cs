@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 #if NETSTANDARD2_0
 using IWebHostEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 #endif
@@ -15,6 +16,13 @@ namespace IGeekFan.AspNetCore.Knife4jUI
         {
             return app.UseMiddleware<Knife4jUIMiddleware>(options);
         }
+
+        public static IServiceCollection AddKnife4UI(this IServiceCollection service, IConfiguration configuration)
+        {
+            Knife4UIConfiguration.AddDynamicConfig(configuration);
+            return service;
+        }
+
         public static IApplicationBuilder UseKnife4UI(
              this IApplicationBuilder app,
              Action<Knife4UIOptions> setupAction = null)

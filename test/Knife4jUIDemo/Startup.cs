@@ -23,6 +23,7 @@ namespace Knife4jUIDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddKnife4UI(Configuration);
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API V1", Version = "v1" });
