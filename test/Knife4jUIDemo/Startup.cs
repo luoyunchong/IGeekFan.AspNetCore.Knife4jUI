@@ -23,14 +23,19 @@ namespace Knife4jUIDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.Configure<Knife4UIOptions>(c =>
+            {
+                Configuration.Bind("Knife4UI", c);
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API V1", Version = "v1" });
                 c.AddServer(new OpenApiServer()
                 {
-                    //Url = "http://localhost:81/admin/",
+                    Url = "http://localhost:81/admin/",
                     Description = "vvv"
                 });
+
                 c.CustomOperationIds(apiDesc =>
                 {
                     var controllerAction = apiDesc.ActionDescriptor as ControllerActionDescriptor;

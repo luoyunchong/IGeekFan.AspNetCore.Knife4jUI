@@ -55,7 +55,7 @@ namespace Basic
                 //c.EnableAnnotations();
                 c.AddServer(new OpenApiServer()
                 {
-                    Url = "",
+                    Url = "http://localhost:81/admin/",
                     Description = "vvv"
                 });
                 c.CustomOperationIds(apiDesc =>
