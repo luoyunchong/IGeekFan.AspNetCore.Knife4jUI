@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "API V1", Version = "v1" });
-    var filePath = Path.Combine(System.AppContext.BaseDirectory, "AspNetCore6Api.xml");
+    var filePath = Path.Combine(System.AppContext.BaseDirectory, "AspNetCore7Api.xml");
     c.IncludeXmlComments(filePath, true);
 });
 
@@ -24,17 +24,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseKnife4UI(c =>
     {
-        c.RoutePrefix = "k4"; // serve the UI at root
+        c.RoutePrefix = "swagger"; // serve the UI at root
         c.SwaggerEndpoint("/v1/swagger.json", "V1 Docs");
     });
 
 }
 
 app.UseHttpsRedirection();
-
+app.UseRouting();
 app.UseAuthorization();
 
-app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();

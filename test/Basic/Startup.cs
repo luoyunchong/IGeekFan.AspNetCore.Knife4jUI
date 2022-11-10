@@ -27,6 +27,15 @@ namespace Basic
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder
+                        .SetIsOriginAllowed((host) => true)
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
 
             services.AddSwaggerGen(c =>
             {
@@ -53,11 +62,11 @@ namespace Basic
                 c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "Basic.xml"),true);
 
                 //c.EnableAnnotations();
-                c.AddServer(new OpenApiServer()
-                {
-                    Url = "http://localhost:81/admin/",
-                    Description = "vvv"
-                });
+                //c.AddServer(new OpenApiServer()
+                //{
+                //    Url = "http://localhost:81/admin/",
+                //    Description = "vvv"
+                //});
                 c.CustomOperationIds(apiDesc =>
                 {
                     var controllerAction = apiDesc.ActionDescriptor as ControllerActionDescriptor;
@@ -75,7 +84,9 @@ namespace Basic
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(policyName: "CorsPolicy");
+            app.UseHsts();
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();

@@ -5,12 +5,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="IdentityServer4" Version="3.0.2" />
+		<PackageReference Include="IdentityServer4" Version="4.1.2" />
 		<PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
 		<PackageReference Include="NCaptcha.AspNetCore.SessionImages" Version="0.1.0" />
-		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.1.4" />
-		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.1.4" />
-		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="6.1.4" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.4.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="6.4.0" />
 	</ItemGroup>
 
 	<ItemGroup>

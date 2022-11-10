@@ -23,8 +23,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OAuth2Integration", "test\W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSwag.Swagger.Knife4jUI", "test\WebSites\NSwag.Swagger.Knife4jUI\NSwag.Swagger.Knife4jUI.csproj", "{42B4C1C3-AE38-47C7-AAAA-FE0FDA7DADEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore6Api", "samples\AspNetCore6Api\AspNetCore6Api.csproj", "{43B995C5-145B-4D46-B4C3-6340F31A1572}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A08844CF-E477-4104-98CB-EB6417CB1B0C}"
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
@@ -32,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore7Api", "samples\AspNetCoreApi\AspNetCore7Api.csproj", "{F576D6A1-D21C-4BBB-9461-8D7C6DBE5B61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,10 +63,10 @@ Global
 		{42B4C1C3-AE38-47C7-AAAA-FE0FDA7DADEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42B4C1C3-AE38-47C7-AAAA-FE0FDA7DADEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42B4C1C3-AE38-47C7-AAAA-FE0FDA7DADEB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43B995C5-145B-4D46-B4C3-6340F31A1572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43B995C5-145B-4D46-B4C3-6340F31A1572}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43B995C5-145B-4D46-B4C3-6340F31A1572}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43B995C5-145B-4D46-B4C3-6340F31A1572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F576D6A1-D21C-4BBB-9461-8D7C6DBE5B61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F576D6A1-D21C-4BBB-9461-8D7C6DBE5B61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F576D6A1-D21C-4BBB-9461-8D7C6DBE5B61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F576D6A1-D21C-4BBB-9461-8D7C6DBE5B61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,7 +79,7 @@ Global
 		{86851B6C-3504-4879-8464-1DB422D46BA0} = {75C51574-4CBD-403B-8182-8BF2A6DCFD43}
 		{9E8D8F42-33F0-4F2D-9B56-1AB1B33DE1FA} = {86851B6C-3504-4879-8464-1DB422D46BA0}
 		{42B4C1C3-AE38-47C7-AAAA-FE0FDA7DADEB} = {86851B6C-3504-4879-8464-1DB422D46BA0}
-		{43B995C5-145B-4D46-B4C3-6340F31A1572} = {C146A419-15E0-4475-9623-706C5E2DCE0B}
+		{F576D6A1-D21C-4BBB-9461-8D7C6DBE5B61} = {C146A419-15E0-4475-9623-706C5E2DCE0B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D77CCB4-F597-421B-9EF9-52D4B0AC382D}
