@@ -124,7 +124,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
           app.UseKnife4UI(c =>
          {
                c.RoutePrefix = "";
-               c.SwaggerEndpoint("/swagger/v1/swagger.json");
+               c.SwaggerEndpoint("/swagger/v1/swagger.json", "V1 Docs");
           });
 }
 ```
