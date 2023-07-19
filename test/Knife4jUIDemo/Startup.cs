@@ -42,8 +42,8 @@ namespace Knife4jUIDemo
                     return controllerAction.ControllerName + "-" + controllerAction.ActionName;
                 });
 
-                var filePath = Path.Combine(System.AppContext.BaseDirectory, "Knife4jUIDemo.xml");
-                c.IncludeXmlComments(filePath, true);
+                //var filePath = Path.Combine(System.AppContext.BaseDirectory, "Knife4jUIDemo.xml");
+                //c.IncludeXmlComments(filePath, true);
             });
         }
 

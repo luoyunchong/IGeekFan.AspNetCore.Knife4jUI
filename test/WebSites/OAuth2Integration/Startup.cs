@@ -60,24 +60,24 @@ namespace OAuth2Integration
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "Test API V1" });
 
-                // Define the OAuth2.0 scheme that's in use (i.e. Implicit Flow)
-                c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-                {
-                    Type = SecuritySchemeType.OAuth2,
-                    Flows = new OpenApiOAuthFlows
-                    {
-                        AuthorizationCode = new OpenApiOAuthFlow
-                        {
-                            AuthorizationUrl = new Uri("/auth-server/connect/authorize", UriKind.Relative),
-                            TokenUrl = new Uri("/auth-server/connect/token", UriKind.Relative),
-                            Scopes = new Dictionary<string, string>
-                            {
-                                { "readAccess", "Access read operations" },
-                                { "writeAccess", "Access write operations" }
-                            }
-                        }
-                    }
-                });
+                //// Define the OAuth2.0 scheme that's in use (i.e. Implicit Flow)
+                //c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                //{
+                //    Type = SecuritySchemeType.OAuth2,
+                //    Flows = new OpenApiOAuthFlows
+                //    {
+                //        AuthorizationCode = new OpenApiOAuthFlow
+                //        {
+                //            AuthorizationUrl = new Uri("/auth-server/connect/authorize", UriKind.Relative),
+                //            TokenUrl = new Uri("/auth-server/connect/token", UriKind.Relative),
+                //            Scopes = new Dictionary<string, string>
+                //            {
+                //                { "readAccess", "Access read operations" },
+                //                { "writeAccess", "Access write operations" }
+                //            }
+                //        }
+                //    }
+                //});
 
                 c.CustomOperationIds(apiDesc =>
                 {

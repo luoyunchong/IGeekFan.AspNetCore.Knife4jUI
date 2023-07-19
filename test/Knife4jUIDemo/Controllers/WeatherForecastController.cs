@@ -73,6 +73,46 @@ namespace Knife4jUIDemo.Controllers
             })
             .ToArray();
         }
+
+        /// <summary>
+        /// 发送一个Post
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("CreateUserRequest")]
+        public UserRequest<TheyReqDto> CreateUserRequest([FromBody] UserRequest<TheyReqDto> req)
+        {
+            return req;
+        }
+
+    }
+
+    /// <summary>
+    /// TheyReqDto
+    /// </summary>
+    public sealed class TheyReqDto
+    {
+        /// <summary>
+        /// Hobbies
+        /// </summary>
+        public string Hobbies { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Behavior
+        /// </summary>
+        public string Behavior { get; set; } = string.Empty;
+    }
+
+    public class UserRequest<TRequest> where TRequest : class
+    {
+        /// <summary>
+        /// RequestId
+        /// </summary>
+        public string RequestId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Args
+        /// </summary>
+        public TRequest Args { get; set; }
     }
 
     /// <summary>

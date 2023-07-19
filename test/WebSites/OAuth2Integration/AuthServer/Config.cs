@@ -16,14 +16,16 @@ namespace OAuth2Integration.AuthServer
                 RedirectUris = new[] {
                     "http://localhost:55202/resource-server/swagger/oauth2-redirect.html", // IIS Express
                     "http://localhost:5000/resource-server/swagger/oauth2-redirect.html", // Kestrel
+                    "http://localhost:5000/oauth/oauth2.html", // Kestrel
+                    "http://localhost:8080/oauth/oauth2.html", // Kestrel
                 },
 
                 ClientSecrets = { new Secret("test-secret".Sha256()) },
                 RequireConsent = true,
 
                 AllowedGrantTypes = GrantTypes.Code,
-                RequirePkce = true,
-                AllowedScopes = new[] { "readAccess", "writeAccess" },
+                RequirePkce = false,
+                //AllowedScopes = new[] { "readAccess", "writeAccess" },
             };
         }
 

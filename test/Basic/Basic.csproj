@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <PackageReference Include="IGeekFan.AspNetCore.Knife4jUI" Version="0.0.12" />
+	  <PackageReference Include="IGeekFan.AspNetCore.Knife4jUI" Version="0.0.13" />
 	  <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
 	  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="6.4.0" />
   </ItemGroup>

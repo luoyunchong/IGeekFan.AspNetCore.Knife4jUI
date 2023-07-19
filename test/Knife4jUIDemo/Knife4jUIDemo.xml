@@ -27,6 +27,37 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Knife4jUIDemo.Controllers.WeatherForecastController.CreateUserRequest(Knife4jUIDemo.Controllers.UserRequest{Knife4jUIDemo.Controllers.TheyReqDto})">
+            <summary>
+            发送一个Post
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Knife4jUIDemo.Controllers.TheyReqDto">
+            <summary>
+            TheyReqDto
+            </summary>
+        </member>
+        <member name="P:Knife4jUIDemo.Controllers.TheyReqDto.Hobbies">
+            <summary>
+            Hobbies
+            </summary>
+        </member>
+        <member name="P:Knife4jUIDemo.Controllers.TheyReqDto.Behavior">
+            <summary>
+            Behavior
+            </summary>
+        </member>
+        <member name="P:Knife4jUIDemo.Controllers.UserRequest`1.RequestId">
+            <summary>
+            RequestId
+            </summary>
+        </member>
+        <member name="P:Knife4jUIDemo.Controllers.UserRequest`1.Args">
+            <summary>
+            Args
+            </summary>
+        </member>
         <member name="T:Knife4jUIDemo.Controllers.PostErrorCodeDto">
             <summary>
             请求实体
