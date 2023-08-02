@@ -11,14 +11,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!--<PackageReference Include="IGeekFan.AspNetCore.Knife4jUI" Version="0.0.9" />-->
-		<PackageReference Include="IGeekFan.AspNetCore.Knife4jUI" Version="0.0.13" />
+		<!--<PackageReference Include="IGeekFan.AspNetCore.Knife4jUI" Version="0.0.13" />-->
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<!--<ProjectReference Include="..\..\src\IGeekFan.AspNetCore.Knife4jUI\IGeekFan.AspNetCore.Knife4jUI.csproj" />-->
+		<ProjectReference Include="..\..\src\IGeekFan.AspNetCore.Knife4jUI\IGeekFan.AspNetCore.Knife4jUI.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
