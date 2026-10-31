@@ -1,13 +1,13 @@
-[English](README.en.md) | **简体中文**
+**English** | [简体中文](README.zh-CN.md)
 
 # IGeekFan.AspNetCore.Knife4jUI
 
-一个swagger ui 库：**[knife4j UI](https://gitee.com/xiaoym/knife4j)**，支持 .NET Core3.0+或.NET Standard2.0。
+A Swagger UI library using **[Knife4j UI](https://gitee.com/xiaoym/knife4j)**, supporting .NET Core 3.0+ and .NET Standard 2.0.
 
 
 [![nuget](https://img.shields.io/nuget/v/IGeekFan.AspNetCore.Knife4jUI.svg?style=flat-square)](https://www.nuget.org/packages/IGeekFan.AspNetCore.Knife4jUI) [![stats](https://img.shields.io/nuget/dt/IGeekFan.AspNetCore.Knife4jUI.svg?style=flat-square)](https://www.nuget.org/stats/packages/IGeekFan.AspNetCore.Knife4jUI?groupby=Version) [![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://raw.githubusercontent.com/luoyunchong/IGeekFan.AspNetCore.Knife4jUI/master/LICENSE.txt)
 
-## 相关依赖项
+## Dependencies
 ### [knife4j](https://gitee.com/xiaoym/knife4j/tree/master/knife4j-vue)
 - knife4j-vue
 ### [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
@@ -18,11 +18,11 @@
 - [Basic](https://github.com/luoyunchong/IGeekFan.AspNetCore.Knife4jUI/blob/master/test/Basic)
 - [Knife4jUIDemo](https://github.com/luoyunchong/IGeekFan.AspNetCore.Knife4jUI/blob/master/test/Knife4jUIDemo)
 
-## 📚 快速开始
+## 📚 Quick start
 
-### 🚀安装包
+### 🚀 Install packages
 
-以下为使用Swashbuckle.AspNetCore.Swagger底层组件
+The following example uses Swashbuckle.AspNetCore.Swagger.
 
 1.Install the standard Nuget package into your ASP.NET Core application.
 
@@ -52,7 +52,7 @@ using IGeekFan.AspNetCore.Knife4jUI;
 ```
 ### 🚁 ConfigureServices
 
-3.服务配置，CustomOperationIds和AddServer是必须的。
+3. Configure the service. CustomOperationIds and AddServer are required.
 ```
    services.AddSwaggerGen(c =>
     {
@@ -71,7 +71,7 @@ using IGeekFan.AspNetCore.Knife4jUI;
 ```
 
 ### 💪 Configure
-4. 中间件配置
+4. Configure the middleware.
 ```
 app.UseSwagger();
 
@@ -88,32 +88,32 @@ app.UseEndpoints(endpoints =>
 });
 ```
 
-5.更多功能
+5. Additional features
 
-为文档添加注释 在项目上右键--属性--生成
+To add documentation comments, right-click the project and select Properties → Build.
 
 ![](https://pic.downk.cc/item/5f34161d14195aa59413f0fc.jpg)
 
-在AddSwaggerGen方法中添加如下代码
+Add the following code to AddSwaggerGen:
 
 ```
 c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "SwaggerDemo.xml"),true);
 ```
- 最后一个参数设置为true，代表启用控制器上的注释
+ Set the final argument to true to enable controller comments.
 
-运行后如看不到控制器上注释显示，请点开文档管理->个性化设置，开启分组tag显示description说明属性
+If controller comments do not appear, open Document Management → Personalization and enable the description attribute for grouped tags.
 
 ![](https://pic.downk.cc/item/5f34171114195aa594142d2e.jpg)
 
 
 
 ### NSwag.AspNetCore
-（请参考目录test/WebSites/NSwag.Swagger.Knife4jUI）
+(See the test/WebSites/NSwag.Swagger.Knife4jUI directory.)
 
 ```
 public void ConfigureServices(IServiceCollection services)
  {
-    // 其它Service
+    // Other services
      services.AddOpenApiDocument();
  }
 ```
@@ -121,7 +121,7 @@ public void ConfigureServices(IServiceCollection services)
 ```
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
-            // 其它 Use
+            // Other middleware
           app.UseOpenApi();
           app.UseKnife4UI(c =>
          {
@@ -131,20 +131,20 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-即可使用 Knife4jUI
+Knife4jUI is now ready to use.
 
-### 🔎 效果图
-运行项目，打开 https://localhost:5001/index.html#/home
+### 🔎 Preview
+Run the project and open https://localhost:5001/index.html#/home
 
 ![docs/home.jpg](docs/home.jpg)
 
 
-### 更多配置请参考
+### More configuration
 
 - [https://github.com/domaindrivendev/Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
 
 
-### 更多项目
+### More projects
 
 - [https://api.igeekfan.cn/swagger/index.html](https://api.igeekfan.cn/swagger/index.html)
 - [https://github.com/luoyunchong/lin-cms-dotnetcore](https://github.com/luoyunchong/lin-cms-dotnetcore)
